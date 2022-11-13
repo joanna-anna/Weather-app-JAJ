@@ -42,7 +42,7 @@ li {
 }
 
 .weather-temp i {
-  margin-right: 20px;
+  margin-right: 5px;
   font-size: 45px;
 }
 
@@ -50,9 +50,10 @@ li {
   font-size: 64px;
   color: rgb(33, 33, 33);
   font-weight: 400;
+  line-height: 1;
 }
-.weather-temp span {
+.weather-temp.unit {
   position: relative;
   font-size: 16px;
-  top: -34px;
+  top: -39px;
 }
