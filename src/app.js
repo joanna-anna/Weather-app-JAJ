@@ -21,7 +21,8 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minuts}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
@@ -49,6 +50,13 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForcast(coordinates) {
+  let apiKey = "d0fo1c2387c00a7200tda8b3e35c0794";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -71,6 +79,7 @@ function displayTemperature(response) {
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.description);
+  getForcast(response.data.coordinates);
 }
 
 function search(city) {
@@ -118,4 +127,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperatur);
 
 search("Görlitz");
-displayForecast();
