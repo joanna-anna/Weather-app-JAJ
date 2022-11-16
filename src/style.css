@@ -25,9 +25,10 @@ li {
   line-height: 19px;
 }
 
-li::first-letter {
+li:first-letter {
   text-transform: capitalize;
 }
+
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
@@ -43,28 +44,42 @@ li::first-letter {
   margin-bottom: 20px;
 }
 
-.weather-temp i {
+.weather-temp img {
   margin-right: 5px;
-  font-size: 45px;
+  height: 72px;
+  width: 72px;
 }
 
 .weather-temp strong {
   font-size: 64px;
   color: rgb(33, 33, 33);
   font-weight: 400;
-  line-height: 2;
+  line-height: 1;
 }
-.weather-temp span {
+
+.weather-temp .unit {
   position: relative;
   font-size: 16px;
-  top: -32px;
+  top: -34px;
 }
 
-.weather-temp.active {
+.weather-temp .active {
   color: rgb(33, 33, 33);
   cursor: default;
+  text-decoration-line: none;
 }
 
-.weather-temp.active:hover {
+.weather-temp .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
 }
