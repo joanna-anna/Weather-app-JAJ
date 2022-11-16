@@ -21,6 +21,34 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minuts}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2">
+                <div class="weather-forcast-date">${day}</div>
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+                  alt=""
+                  width="56"
+                />
+                <div class="weather-forcast-temperature">
+                  <span class="weather-forcast-temperature-max"> 18°</span>
+                  <span class="weather-forcast-temperature-min"> 12°</span>
+                </div>
+              </div>
+           `;
+  });
+
+  forecastHTML = forecastHTML + `</div> `;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -90,3 +118,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperatur);
 
 search("Görlitz");
+displayForecast();
