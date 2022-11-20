@@ -24,7 +24,7 @@
         <div class="weather-app">
           <form id="search-form" class="mb-3">
             <div class="row">
-              <div class="col-9">
+              <div class="col-6">
                 <input
                   type="search"
                   placeholder="What city do you search?"
@@ -33,15 +33,23 @@
                   autocomplete="off"
                 />
               </div>
-              <div class="col-3">
+                <div class="col-2">
                 <input
                   type="submit"
                   value="Search"
                   class="btn btn-primary w-100"
                 />
+                </div>
+                <div class="col-2">
+                <input
+                  type="button"
+                  class="btn btn-primary w-90"
+                  value="🌏 Local"
+                  id="current-location-button"
+                />
               </div>
             </div>
-          </form>
+            </form>
           <div class="overview">
             <h1 id="city"></h1>
             <ul>
@@ -85,6 +93,7 @@
           </a>
           by Joanna Jarosz
         </small>
+      </div>
       </div>
     </div>
     <script src="src/app.js"></script>

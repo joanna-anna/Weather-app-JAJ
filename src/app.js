@@ -71,7 +71,7 @@ function displayForecast(response) {
 function getForcast(coordinates) {
   let apiKey = "d0fo1c2387c00a7200tda8b3e35c0794";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -100,7 +100,7 @@ function displayTemperature(response) {
   getForcast(response.data.coordinates);
 }
 
-function search(city) {
+function searchCity(city) {
   let apiKey = "d0fo1c2387c00a7200tda8b3e35c0794";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
@@ -109,7 +109,15 @@ function search(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
+  searchCity(cityInputElement.value);
+}
+
+function displayCurrentTemperature(response) {}
+
+function searchLocation(position) {
+  let apiKey = "d0fo1c2387c00a7200tda8b3e35c0794";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.longitude}&lat=${position.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function displayFahrenheitTemperatur(event) {
@@ -133,6 +141,15 @@ function displayCelsiusTemperatur(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+function getCurrentLocation(event) {
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -144,4 +161,7 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperatur);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperatur);
 
-search("Görlitz");
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
+searchCity("Berlin");
