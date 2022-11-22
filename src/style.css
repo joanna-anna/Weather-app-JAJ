@@ -94,3 +94,6 @@ li:first-letter {
 .weather-forcast-temperature {
   font-size: 14px;
 }
+.card-background {
+  opacity: 0.62;
+}

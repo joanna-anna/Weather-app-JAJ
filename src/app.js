@@ -41,28 +41,32 @@ function displayForecast(response) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `
-              <div class="col-2">
-                <div class="weather-forcast-date">${formatDay(
-                  forecastDay.time
-                )}</div>
+        `  
+       
+          <div class=" card-group g-3 card-background" style="width: 6rem;" >
+              <div class="col-sm-3 card cardA " >
+                  <div class="weather-forcast-date">${formatDay(
+                    forecastDay.time
+                  )}</div>
                
-                <img
-                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-                    forecastDay.condition.icon
-                  }.png"
-                  alt=""
-                  width="56"
-                />
-                <div class="weather-forcast-temperature">
-                  <span class="weather-forcast-temperature-max"> ${Math.round(
-                    forecastDay.temperature.maximum
-                  )}°</span>
-                  <span class="weather-forcast-temperature-min"> ${Math.round(
-                    forecastDay.temperature.maximum
-                  )}°</span>
-                </div>
+                  <img
+                   src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                     forecastDay.condition.icon
+                   }.png"
+                   alt=""
+                   width="56"
+                   />
+                   <div class="weather-forcast-temperature">
+                   <span class="weather-forcast-temperature-max"> ${Math.round(
+                     forecastDay.temperature.maximum
+                   )}°</span>
+                   <span class="weather-forcast-temperature-min"> ${Math.round(
+                     forecastDay.temperature.maximum
+                   )}°</span>
+                  </div>
               </div>
+          </div>
+        
            `;
     }
   });
