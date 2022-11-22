@@ -169,4 +169,4 @@ celsiusLink.addEventListener("click", displayCelsiusTemperatur);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-searchCity("Berlin");
+searchCity("Görlitz");
