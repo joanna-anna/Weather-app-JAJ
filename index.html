@@ -23,8 +23,18 @@
     <div class="conteiner">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <form id="search-form" class="mb-3">
-            <div class="row">
+          <div class="card cardA ">
+          <div class="card-body">
+          <div class="overview"  >
+            <h1 id="city"></h1>
+            <ul>
+              <li><span id="date" class="weather-forecast-date"></span></li>
+              <li id="description"></li>
+            </ul>
+          </div>
+          
+          <form id="search-form" class="row row-cols-lg-auto g-3 align-items-center">
+           
               <div class="col-6">
                 <input
                   type="search"
@@ -49,16 +59,14 @@
                   id="current-location-button"
                 />
               </div>
-            </div>
             </form>
-          <div class="overview">
-            <h1 id="city"></h1>
-            <ul>
-              <li><span id="date" class="weather-forecast-date"></span></li>
-              <li id="description"></li>
-            </ul>
-          </div>
-          <div class="row">
+            </div>
+            </div>
+
+            <div class="card cardA text-center">
+            <div class="card-body">
+
+            <div class="row card-body ">
             <div class="col-6">
               <div class="d-flex weather-temp">
                 <img
@@ -76,6 +84,9 @@
                 </div>
               </div>
             </div>
+            
+
+            
             <div class="col-6">
               <ul>
                 <li>Humidity: <span id="humidity"></span>%</li>
@@ -84,8 +95,14 @@
               </ul>
             </div>
           </div>
+
+        </div>
+        </div>
+
+
           <div class="weather-forecast" id="forecast"></div>
         </div>
+
         <small>
           <a
             href="https://github.com/joanna-anna/Weather-app-JAJ"

@@ -102,3 +102,8 @@ li:first-letter {
 .card-background {
   opacity: 0.62;
 }
+
+.cardA {
+  background-color: #e7ecef;
+  border-color: #e7ecef;
+}
