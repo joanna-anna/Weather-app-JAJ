@@ -19,101 +19,100 @@
     <title>Weather App JAJ</title>
   </head>
   </head>
-  <body>
+  <body cz-shortcut-listen="true">
     <div class="conteiner">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <div class="card cardA ">
-          <div class="card-body">
-          <div class="overview"  >
-            <h1 id="city"></h1>
-            <ul>
-              <li><span id="date" class="weather-forecast-date"></span></li>
-              <li id="description"></li>
-            </ul>
-          </div>
-          
-          <form id="search-form" class="row row-cols-lg-auto g-3 align-items-center">
-           
-              <div class="col-6">
-                <input
-                  type="search"
-                  placeholder="What city do you search?"
-                  class="form-control"
-                  id="city-input"
-                  autocomplete="off"
-                />
-              </div>
-                <div class="col-2">
-                <input
-                  type="submit"
-                  value="Search"
-                  class="btn btn-primary w-100"
-                />
-                </div>
-                <div class="col-2">
-                <input
-                  type="button"
-                  class="btn btn-primary w-90"
-                  value="🌏 Local"
-                  id="current-location-button"
-                />
-              </div>
-            </form>
-            </div>
-            </div>
 
-            <div class="card cardA text-center">
+          <div class="card cardA ">
+            <div class="card-body">
+               <div class="overview card-body"  >
+                  <h1 id="city"></h1>
+                  <ul>
+                    <li><span id="date" class="weather-forecast-date"></span></li>
+                    <li id="description"></li>
+                  </ul>
+               </div>
+          
+                <form id="search-form" class="row row-cols-lg-auto g-3 align-items-center">
+                  <div class="col-6">
+                    <input
+                      type="search"
+                      placeholder="City?"
+                      class="form-control"
+                      id="city-input"
+                      autocomplete="off"
+                      autofocus="on"
+                    />
+                  </div>
+                  <div style="width:6rem">
+                    <input
+                      type="submit"
+                      value="Search"
+                      class="btn btn-primary w-100"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="button"
+                      class="btn btn-primary w-90"
+                      value="🌏 Local"
+                      id="current-location-button"
+                    />
+                  </div>
+                </form>
+            </div>
+          </div>
+
+          <div class="card cardA text-right">
             <div class="card-body">
 
-            <div class="row card-body ">
-            <div class="col-6">
-              <div class="d-flex weather-temp">
-                <img
-                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
-                  alt="clear"
-                  id="icon"
-                  class="float-left"
-                />
-                <div class="float-left">
-                  <strong id="temperature"></strong>
-                  <span class="unit">
-                    <a href="#" id="celsius-link" class="active">℃</a>|
-                    <a href="#" id="fahrenheit-link">℉</a>
-                  </span>
+              <div class="row row-cols-lg-auto g-3 align-items-center">
+                <div class="col-6">
+                  <div class="d-flex weather-temp">
+                  <img
+                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+                    alt="clear"
+                    id="icon"
+                    class="float-left"
+                  />
+                  <div class="float-left">
+                    <strong id="temperature"></strong>
+                    <span class="unit">
+                      <a href="#" id="celsius-link" class="active">℃</a>|
+                      <a href="#" id="fahrenheit-link">℉</a>
+                    </span>
+               </div>
+
+            </div>
+                </div>
+            
+                <div class="col-3">
+                  <ul>
+                    <li>Humidity: <span id="humidity"></span>%</li>
+                    <li>Wind: <span id="wind"></span> km/h</li>
+                    <li>Real feel:<span id="real-feel"></span>℃</li>
+                  </ul>
                 </div>
               </div>
-            </div>
-            
 
-            
-            <div class="col-6">
-              <ul>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
-                <li>Real feel:<span id="real-feel"></span>℃</li>
-              </ul>
             </div>
           </div>
-
-        </div>
-        </div>
-
-
+          
           <div class="weather-forecast" id="forecast"></div>
         </div>
 
-        <small>
-          <a
-            href="https://github.com/joanna-anna/Weather-app-JAJ"
-            target="_blank"
-          >
-            Open sorce code
-          </a>
-          by Joanna Jarosz
-        </small>
+            <small>
+              <a
+                href="https://github.com/joanna-anna/Weather-app-JAJ"
+                target="_blank"
+              >
+                Open sorce code
+              </a>
+              by Joanna Jarosz
+            </small>
       </div>
-      </div>
+      
     </div>
     <script src="src/app.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
